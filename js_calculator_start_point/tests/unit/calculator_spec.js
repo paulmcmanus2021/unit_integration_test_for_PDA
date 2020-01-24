@@ -17,6 +17,12 @@ describe('calculator', function () {
     calculator.previousTotal = "7"
     calculator.subtract("4")
     assert.equal(3.0, calculator.runningTotal)
+  }),
+
+  it('Can multiply two numbers', function(){
+    calculator.previousTotal = "3"
+    calculator.multiply("5")
+    assert.equal(15.0, calculator.runningTotal)
   })
 
 });
