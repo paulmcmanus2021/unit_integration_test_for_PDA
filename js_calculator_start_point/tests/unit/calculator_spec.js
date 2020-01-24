@@ -46,6 +46,18 @@ describe('calculator', function () {
     calculator.numberClick("6")
     calculator.operatorClick("=")
     assert.equal(11.0, calculator.runningTotal)
+  }),
+
+  it('Can chain multiple operations together (no equals)', function(){
+    calculator.numberClick("4")
+    calculator.operatorClick("+")
+    calculator.numberClick("4")
+    calculator.operatorClick("-")
+    calculator.numberClick("2")
+    calculator.operatorClick("/")
+    calculator.numberClick("2")
+    calculator.operatorClick("=")
+    assert.equal(3.0, calculator.runningTotal)
   })
 
 });
