@@ -47,7 +47,18 @@ describe('calculator functionality', function() {
     element(by.css('#number3')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('-5')
+  }),
+
+  it('can handle decimal numbers', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number1')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number3')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('0.3333333333333333')
   })
+
+
 
 
 
