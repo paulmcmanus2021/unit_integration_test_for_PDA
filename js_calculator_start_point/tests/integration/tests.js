@@ -56,6 +56,25 @@ describe('calculator functionality', function() {
     element(by.css('#number3')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('0.3333333333333333')
+  }),
+
+  it('can handle large numbers', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('999998000001')
   })
 
 
